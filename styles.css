@@ -31,16 +31,17 @@ section {
 
 .gallery-container img,
 .gallery-container video {
-    max-width: 200px;
+    max-width: 100%;
+    height: auto;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .slideshow-container {
     position: relative;
-    max-width: 1000px;
+    max-width: 100%;
     margin: auto;
-    display: none; /* Hide initially */
+    display: none;
 }
 
 .slides-wrapper {
@@ -52,7 +53,7 @@ section {
 }
 
 .mySlides {
-    flex: 0 0 60%; /* Make the current slide prominent */
+    flex: 0 0 60%;
     display: none;
     transition: transform 0.5s ease-in-out;
 }
@@ -62,12 +63,14 @@ section {
     border-radius: 10px;
 }
 
-.mySlides.prev-slide, .mySlides.next-slide {
-    flex: 0 0 20%; /* Make the previous and next slides smaller */
+.mySlides.prev-slide,
+.mySlides.next-slide {
+    flex: 0 0 20%;
     opacity: 0.6;
 }
 
-.prev, .next {
+.prev,
+.next {
     cursor: pointer;
     position: absolute;
     top: 50%;
@@ -87,17 +90,31 @@ section {
     border-radius: 3px 0 0 3px;
 }
 
-.prev:hover, .next:hover {
-    background-color: rgba(0,0,0,0.8);
+.prev:hover,
+.next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
 }
 
 .text-bubble {
     background-color: #ff4081;
     color: white;
     padding: 10px 20px;
-    border-radius: 30px;
+    border-radius: 20px;
     display: inline-block;
     margin: 10px;
+    position: absolute;
+    animation: floatUp 5s ease-in-out infinite;
+}
+
+.text-bubble::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 10px;
+    width: 0;
+    height: 0;
+    border: 10px solid transparent;
+    border-top-color: #ff4081;
 }
 
 .hidden {
@@ -112,4 +129,49 @@ footer {
     position: fixed;
     width: 100%;
     bottom: 0;
+    z-index: 1;
+}
+
+.submit-button {
+    display: block;
+    margin: 10px auto;
+    padding: 10px 20px;
+    background-color: #ff4081;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 600px) {
+    .slideshow-container {
+        width: 100%;
+    }
+    .mySlides {
+        flex: 0 0 80%;
+    }
+    .mySlides.prev-slide,
+    .mySlides.next-slide {
+        flex: 0 0 10%;
+    }
+    .prev,
+    .next {
+        font-size: 14px;
+    }
+    .submit-button {
+        font-size: 14px;
+    }
+}
+
+@keyframes floatUp {
+    0% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(-100px);
+        opacity: 0;
+    }
 }
