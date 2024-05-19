@@ -12,7 +12,6 @@ document.addEventListener('DOMContentLoaded', () => {
             yesResponse.classList.remove('hidden');
             startSlideshow();
             slideshowMusic.play();
-            startFloatingBubbles();
         }
     });
 
@@ -20,42 +19,18 @@ document.addEventListener('DOMContentLoaded', () => {
     const slides = document.querySelectorAll('.mySlides');
 
     function showSlides() {
-        slides.forEach((slide, index) => {
-            slide.classList.remove('prev-slide', 'next-slide');
-            if (index === slideIndex) {
-                slide.style.display = 'block';
-            } else {
-                slide.style.display = 'none';
-            }
-        });
-
-        const prevIndex = (slideIndex - 1 + slides.length) % slides.length;
-        const nextIndex = (slideIndex + 1) % slides.length;
-
-        slides[prevIndex].style.display = 'block';
-        slides[nextIndex].style.display = 'block';
-        slides[prevIndex].classList.add('prev-slide');
-        slides[nextIndex].classList.add('next-slide');
-    }
-
-    function plusSlides(n) {
-        slideIndex = (slideIndex + n + slides.length) % slides.length;
-        showSlides();
+        for (let i = 0; i < slides.length; i++) {
+            slides[i].style.display = 'none';
+        }
+        slideIndex++;
+        if (slideIndex > slides.length) {
+            slideIndex = 1;
+        }
+        slides[slideIndex - 1].style.display = 'block';
+        setTimeout(showSlides, 3000); // Change slide every 3 seconds
     }
 
     function startSlideshow() {
-        const slideshowContainer = document.querySelector('.slideshow-container');
-        slideshowContainer.style.display = 'block';
         showSlides();
     }
-
-    function startFloatingBubbles() {
-        const textBubbles = document.querySelectorAll('.text-bubble');
-        textBubbles.forEach((bubble) => {
-            bubble.style.top = `${Math.random() * 80 + 10}%`;
-            bubble.style.left = `${Math.random() * 80 + 10}%`;
-        });
-    }
-
-    window.plusSlides = plusSlides;
 });
