@@ -129,6 +129,18 @@ footer {
     z-index: 1; /* Ensure footer stays on top */
 }
 
+.submit-button {
+    display: block;
+    margin: 10px auto;
+    padding: 10px 20px;
+    background-color: #ff4081;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
 @media screen and (max-width: 600px) {
     .slideshow-container {
         width: 100%; /* Adjusted for mobile */
@@ -142,4 +154,12 @@ footer {
     .prev, .next {
         font-size: 14px; /* Adjusted for mobile */
     }
+    .submit-button {
+        font-size: 14px; /* Adjusted for mobile */
+    }
+}
+
+@keyframes floatUp {
+    0% { transform: translateY(0); opacity: 1; }
+    100% { transform: translateY(-100px); opacity: 0; }
 }
