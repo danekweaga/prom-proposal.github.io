@@ -1,0 +1,179 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f8ff;
+    color: #333;
+    text-align: center;
+    overflow-x: hidden; /* Hide horizontal scrollbar */
+    overflow-y: auto; /* Enable vertical scrollbar if needed */
+}
+
+header {
+    background-color: #ff69b4;
+    color: white;
+    padding: 20px 0;
+}
+
+h1 {
+    margin: 0;
+    font-size: 2.5em;
+}
+
+#welcome {
+    margin: 20px 0;
+    padding: 20px;
+    background-color: #ffe4e1;
+}
+
+#gallery {
+    margin: 20px 0;
+}
+
+.gallery-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.gallery-container img {
+    margin: 10px;
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+#proposal {
+    margin: 20px 0;
+    padding: 20px;
+    background-color: #ffe4e1;
+}
+
+#rsvp-form {
+    margin-top: 20px;
+}
+
+#rsvp-form label {
+    font-size: 1.2em;
+}
+
+#rsvp-form select {
+    font-size: 1em;
+    padding: 5px;
+    margin: 10px 0;
+}
+
+#rsvp-form button {
+    font-size: 1em;
+    padding: 10px 20px;
+    background-color: #ff69b4;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#rsvp-form button:hover {
+    background-color: #ff1493;
+}
+
+#thank-you-message {
+    margin-top: 20px;
+    font-size: 1.2em;
+    color: #ff69b4;
+}
+
+.hidden {
+    display: none;
+}
+
+footer {
+    margin: 20px 0;
+    padding: 10px 0;
+    background-color: #ff69b4;
+    color: white;
+}
+
+.text-bubble {
+    background-color: #ff69b4;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 20px;
+    margin: 10px;
+    display: inline-block;
+    font-size: 1.2em;
+}
+
+.slideshow-container {
+    position: relative;
+    max-width: 100%;
+    margin: auto;
+}
+
+.mySlides {
+    display: none;
+}
+
+img {
+    vertical-align: middle;
+}
+
+.fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@keyframes fade {
+    from {opacity: .4} 
+    to {opacity: 1}
+}
+
+.heart {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background-color: pink;
+    transform: rotate(-45deg);
+    left: 50%;
+    animation: floatUp 5s infinite;
+    opacity: 0.6;
+    top: calc(100vh + 50px); /* Start hearts below viewport */
+}
+
+.heart::before,
+.heart::after {
+    content: "";
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background-color: pink;
+    border-radius: 50%;
+}
+
+.heart::before {
+    top: -25px;
+    left: 0;
+}
+
+.heart::after {
+    left: 25px;
+    top: 0;
+}
+
+@keyframes floatUp {
+    0% {
+        transform: translateY(0) rotate(-45deg);
+        opacity: 0.6;
+    }
+    100% {
+        transform: translateY(-100vh) rotate(-45deg);
+        opacity: 0;
+    }
+}
+
+@keyframes fade {
+    from {opacity: .4} 
+    to {opacity: 1}
+}
