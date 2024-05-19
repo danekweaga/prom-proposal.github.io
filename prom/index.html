@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prom Proposal</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Will You Go to Prom with Me?</h1>
+    </header>
+
+    <section id="welcome">
+        <p>Sigma, sigma on the wall, it would be wonderful if you accompanied me to the prom.</p>
+    </section>
+
+    <section id="gallery">
+        <h2>Our Memories</h2>
+        <div class="gallery-container">
+            <img src="image1.jpg" alt="Memory 1">
+            <video controls>
+                <source src="your-video-file.mp4" type="video/mp4">
+            </video>
+            <img src="image2.jpg" alt="Memory 3">
+            <img src="image4.jpg" alt="Memory 3">
+            <img src="image3.jpg" alt="Memory 3">
+            <!-- Add more images as needed -->
+        </div>
+    </section>
+
+    <section id="proposal">
+        <h2>The Proposal</h2>
+        <p>Hey Mia, sorry about the rhyme I just had to. I made this website to ask you to prom. I think you're really pretty and a great friend, and it would make me really happy to go to the prom with you.</p>
+        <audio controls>
+            <source src="prom-invitation.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+        <form id="rsvp-form">
+            <label for="response">Your Answer:</label>
+            <select id="response" name="response">
+                <option value="yes">Yes</option>
+                <option value="no">No</option>
+            </select>
+            <button type="submit">Submit</button>
+        </form>
+        <div id="thank-you-message" class="hidden">
+            <p>Thank you for your response!</p>
+        </div>
+        <div id="yes-response" class="hidden">
+            <div class="text-bubble">Yay! I'm so excited!</div>
+            <div class="text-bubble">Can't wait for prom night!</div>
+            <div class="slideshow-container">
+                <div class="mySlides fade">
+                    <img src="image1.jpg" style="width:100%">
+                </div>
+                <div class="mySlides fade">
+                    <img src="image2.jpg" style="width:100%">
+                </div>
+                <div class="mySlides fade">
+                    <img src="image3.jpg" style="width:100%">
+                </div>
+                <!-- Add more slides as needed -->
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>Created by Nonso</p>
+    </footer>
+
+    <audio id="slideshow-music" loop>
+        <source src="LAZER DIM 700 - Asian rock.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
