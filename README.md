@@ -54,4 +54,4 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - **GitHub Pages**: For free hosting of the website.
 - **Mia**: For being the inspiration behind this project.
 
-Created with ❤️ by Nonso.
+Created by Nonso.
